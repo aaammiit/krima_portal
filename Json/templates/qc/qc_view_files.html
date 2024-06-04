@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        {%load static%}
+	<link rel="stylesheet" href="{% static 'css/view_file.css'%}">
+
+</head>
+
+<body>
+    <div>
+
+
+       
+       
+        <div class="fixed-top bg-dark text-white" style="height: 150px;"> 
+
+           
+                <h2 class="text-center"><img src="/static/image/logo.png" alt="">File Details</h2>
+                
+
+                <table class="table table-hover">
+                    <tr>
+                        <th><a href="/qc_home" class="btn btn-primary">Back To Home</a></th>
+
+                        <th class="text-white">Count</th>
+                        <th class="text-white">From-Date</th>
+                        <th class="text-white">To-Date</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="font-size: 18px;font-weight: 500;color:rgb(218, 210, 210);">{{f1 | length}}</td>
+                        <td style="font-size: 18px;font-weight: 500;color:rgb(218, 210, 210);">{{from_date}}</td>
+                        <td style="font-size: 18px;font-weight: 500;color:rgb(218, 210, 210);">{{to_date}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+
+
+<div class="myc">
+    
+
+
+            <div class="table-responsive-lg">
+                
+
+
+           
+                <table class="table table-hover">
+                    <tr>
+                        {%for i in d%}
+                       
+                    <th class="th1">{{i}}&nbsp; &nbsp;</th>
+                    {%endfor%}
+                    <th ></th>
+
+                    
+                    </tr>
+                  {%if seg == 'rc' %}
+                   
+                    {%for i in f1%}
+                   
+
+                   
+                    
+                    
+                   
+                    <tr >
+                      
+                        <td class="td1">{{i.Sr_No}}</td>
+                        <td class="td1">{{i.Sheet_No}}</td>
+                      <td class="td1">{{i.Published_Date}}</td>
+                      <td class="td1">{{i.Regulatory_Body}}</td>
+                      <td class="td1">{{i.Title|truncatechars:40}}</td>
+                      <td class="td1"><a href="">{{i.URL}}</a></td>
+                      <td class="td1">{{i.Researcher}}</td>
+                      <td class="td1">{{i.Date}}</td>
+                      <td class="td1">{{i.Working_Status}}</td>
+                      <td class="td1">{{i.Document_Status}}</td>
+                     <td class="td1">{{i.Rules_Status}}</td>
+                     <td class="td1">{{i.Rule|truncatechars:40}}</td>
+                     <td class="td1">{{i.Country}}</td>
+                     <td class="td1">{{i.Sector}}</td>
+                     <td class="td1">{{i.Impact|truncatechars:40}}</td>
+                     <td class="td1">{{i.What_is_this_about|truncatechars:40}}</td>
+                     <td class="td1">{{i.Timeline|truncatechars:40}}</td>
+                     <td class="td1">{{i.Compliance_date}}</td>
+                     <td class="td1">{{i.Entities_Impacted}}</td>
+                     <td class="td1">{{i.Act}}</td>
+                     <td class="td1">{{i.Section}}</td>
+                     <td class="td1">{{i.Summary_Remarks|truncatechars:40}}</td>
+                     <td class="td1">{{i.Description_Automated|truncatechars:40}}</td>
+                     <td class="td1">{{i.NEW_Prompt|truncatechars:40}}</td>
+                     <td class="td1">{{i.Researcher_Doubt}}</td>
+                     <td class="td1">{{i.QC_Comments}}</td>
+                     <td class="td1">{{i.Final_Description}}</td>
+                     <td class="td1">{{i.QC_status}}</td>
+                     <td class="td1">{{i.Notes_on_article}}</td>
+                     <td>{{dat}}</td>
+                     <td><a href="/qc_edit_data/{{pid}}/{{forloop.counter0}}" style="text-decoration: none;height: 30px;width: 70px;background-color: azure;font-weight: 800;">Update</a></td>
+
+
+                    </tr>
+                    
+                    
+                    {%endfor%}
+                </table>
+                {%elif seg == 'pnf'%}
+                <table class="table table-hover">
+                    <tr>
+                        {%for i in d1%}
+                       
+                    <th class="th1">{{i}}&nbsp; &nbsp;</th>
+                    {%endfor%}
+                    <th ></th>
+
+                    </tr>
+                    {%for i in f1%}
+                   
+
+                   
+                    
+                    
+                   
+                    <tr >
+                      
+                        <td class="td1">{{i.Sr_No}}</td>
+                        <td class="td1">{{i.Unique_REC_ID}}</td>
+                      <td class="td1">{{i.Rec_No}}</td>
+                      <td class="td1">{{i.Sheet_No}}</td>
+                      <td class="td1"><a href="">{{i.URL|truncatechars:40}}</a></td>
+                      <td class="td1">{{i.Regulatory}}</td>
+                      <td class="td1">{{i.Published_Date}}</td>
+                      <td class="td1">{{i.Title}}</td>
+                      <td class="td1">{{i.Article|truncatechars:70}}</td>
+                      <td class="td1">{{i.Type}}</td>
+                     <td class="td1">{{i.Researcher}}</td>
+                     <td class="td1">{{i.Working_Date}}</td>
+                     <td class="td1">{{i.Status}}</td>
+                     <td class="td1">{{i.Case_Status}}</td>
+                     <td class="td1">{{i.Order_Type}}</td>
+                     <td class="td1">{{i.Imposed_Value}}</td>
+                     <td class="td1">{{i.Settled_Value}}</td>
+                     <td class="td1">{{i.Currency}}</td>
+                     <td class="td1">{{i.Cause_of_Penalty}}</td>
+                     <td class="td1">{{i.Registered_Unregistered_activity}}</td>
+                     <td class="td1">{{i.Entity_Status}}</td>
+                     <td class="td1">{{i.Company_Name}}</td>
+                     <td class="td1">{{i.Individual_Name}}</td>
+                     <td class="td1">{{i.Industry}}</td>
+                     <td class="td1">{{i.Third_parties}}</td>
+                     <td class="td1">{{i.Summary_Remarks}}</td>
+                     <td class="td1">{{i.Description_Automated|truncatechars:40}}</td>
+                     <td class="td1">{{i.Researcher_Doubts}}</td>
+                     <td class="td1">{{i.QC_Status}}</td>
+                     <td class="td1">{{i.QC_Comments}}</td>
+                     <td class="td1">{{i.Final_Description|truncatechars:40}}</td>
+                     
+                     <td class="td1">{{i.Notes_on_Article_History|truncatechars:40}}</td>
+                     <td class="td1">{{dat}}</td>
+                     <td><a href="/qc_edit_data/{{pid}}/{{forloop.counter0}}" style="text-decoration: none;height: 30px;width: 70px;background-color: azure;font-weight: 800;">Update</a></td>
+
+                    
+
+                    </tr>
+                    
+                    
+                    {%endfor%}
+                </table>
+                {%endif%}
+               
+                
+
+                   
+                   
+            </div>
+           
+           
+
+   
+
+    </div>
+</div>
+<div class="container" style="height: 50px;">
+    <td><!-- Button trigger modal -->
+        {%if ac %}
+
+        {%else%}
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Column
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"  >Add Column</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form class="row g-3" method="post">
+                    {%csrf_token%}
+                    <div class="col-md-12">
+                        <label for="inputEmail4" class="form-label">Your Column Name</label>
+                        <input type="text" class="form-control" id="inputEmail4" 
+                              name="col">
+                              <!-- Select Your Column Name
+                              <select class="form-select" aria-label="Default select example" name="col">
+                                <option value="">-----</option>
+                                <option value="Amount">Amount</option>
+                                <option value="Body">Body</option>
+                                <option value="Point">Point</option>
+                              </select> -->
+                    </div>
+                    <!-- <div class="col-md-12">
+                        Verify Your Column Name
+                              <select class="form-select" aria-label="Default select example" name="v">
+                                <option value="">-----</option>
+                                <option value="1">Amount</option>
+                                <option value="2">Body</option>
+                                <option value="3">Point</option>
+                              </select>
+                    </div> -->
+                    <div class="col-md-12">
+                        <label for="inputEmail4" class="form-label">Data</label>
+                        <input type="text" class="form-control" id="inputEmail4" 
+                              name="data" value="None">
+                    </div>
+                    
+                   
+                    <button type="submit">Save</button>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+        </div></td>
+        {%endif%}
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+</body>
+<script>
+     var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+
+        var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+
+})
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</html>

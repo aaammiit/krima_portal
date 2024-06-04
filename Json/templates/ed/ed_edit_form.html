@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+   
+<div class=" p-4" >
+    <h4><a href="/ed_view/{{fr}}" class="btn btn-outline-success btn-lg ">Bact To Home</a></h4>
+</div>
+    
+    <div class="shadow-lg  mb-5 bg-white rounded">
+       
+    
+    <div class="container float-start" id="div1" style="width: 500px;min-width:200px;max-width:1200px;">
+        <img src="/static/image/logo.png" alt="">
+        <!-- <div class="container" style="margin-left: 600px;margin-top: -50px;position: fixed;">
+            <form action="/search_here/{{fr}}/{{did}}" class="d-flex" method="post">
+                {%csrf_token%}
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="srh" style="width: 500px;height: 60px;">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div> -->
+        <h2 class="text-center p-2">Details Edit Form</h2>
+
+        {%if seg == 'rc' %}
+        <form class="row g-3" method="post" action="">
+            {%csrf_token%}
+            <div class="col-md-12">
+                <label for="inputEmail4" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Sr No.</label>
+                <!-- <input type="text" class="form-control" id="inputEmail4" 
+                      name="sr_no" value="{{sr_no}}"> -->
+                      <textarea name="sr_no" id="" cols="80">{{sr_no}}</textarea>
+            </div>
+            <div class="col-md-12">
+                <label for="inputPassword4" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Sheet No.</label>
+                <!-- <input type="text" class="form-control" id="inputPassword4" 
+                     name="sheet_no" value="{{sheet}}"> -->
+                     <textarea name="sheet_no" id="" cols="80">{{sheet}}</textarea>
+                     
+            </div>
+           
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Published_Date</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="p_date" value="{{p_date}}"> -->
+                <textarea name="p_date" id="" cols="80">{{p_date}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Regulatory_Body</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="r_body" value="{{r_body}}"> -->
+                <textarea name="r_body" id="" cols="80">{{r_body}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Title</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="title" value="{{title}}"> -->
+                <textarea name="title" id="" cols="80">{{title}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">URL</label>
+                <input  class="form-control" name="url" value="{{url}}"   placeholder="{{url}}" hidden>
+                <p id="url"><a href="https://www.google.com/search?q={{url}}" target="_blank">{{url}}</a></p>
+                <!-- <button type="button" onclick="return openwin()"  id="btn" >Open Url</button>
+                <p value="{{url}}" style="cursor: pointer; font-size: 20px; " name="url" ><a href="#" >{{url}}</a></p> -->
+                 
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Researcher</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="res" value="{{res}}"> -->
+                <textarea name="res" id="" cols="80">{{res}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Date</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="date" value="{{date}}"> -->
+                <textarea name="date" id="" cols="80">{{date}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Working_Status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="w_s" value="{{w_s}}"> -->
+                <textarea name="w_s" id="" cols="80">{{w_s}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Document_Status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="d_s" value="{{d_s}}"> -->
+                <textarea name="d_s" id="" cols="80">{{d_s}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Rules_Status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="r_s" value="{{r_s}}"> -->
+                <textarea name="r_s" id="" cols="80">{{r_s}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Rule</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="rule" value="{{rule}}"> -->
+                <textarea name="rule" id="" cols="80">{{rule}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Country</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="country" value="{{country}}"> -->
+                <textarea name="country" id="" cols="80">{{country}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Sector</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="sector" value="{{sector}}"> -->
+                <textarea name="sector" id="" cols="80">{{sector}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Impact</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="impact" value="{{impact}}"> -->
+                <textarea name="impact" id="" cols="80">{{impact}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">What is this about</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="w_a" value="{{w_a}}"> -->
+                <textarea name="w_a" id="" cols="80">{{w_a}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Timeline</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="time" value="{{timeline}}"> -->
+                <textarea name="time" id="" cols="80">{{Timeline}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Compliance_date</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="c_d" value="{{c_d}}"> -->
+                <textarea name="c_d" id="" cols="80">{{c_d}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Entities_Impacted</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="e_i" value="{{e_a}}"> -->
+                <textarea name="e_i" id="" cols="80">{{e_i}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Act</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="act" value="{{act}}"> -->
+                <textarea name="act" id="" cols="80">{{act}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Section</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="section" value="{{section}}"> -->
+                <textarea name="section"  id="" cols="80">{{section}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Summary_Remarks</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="s_r" value="{{s_r}}"> -->
+                <textarea name="s_r" id="" cols="80">{{s_r}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Description_Automated</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="d_a" value="{{d_a}}"> -->
+                <textarea name="d_a" id="" cols="80">{{d_a}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">NEW_Prompt</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="n_p" value="{{n_p}}"> -->
+                <textarea name="n_p" id="" cols="80">{{n_p}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Researcher_Doubt</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="r_d" value="{{r_d}}"> -->
+                <textarea name="r_d" id="" cols="80">{{r_d}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">QC_Comments</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="qc_c" value="{{qc_c}}"> -->
+                <textarea name="qc_c" id="" cols="80">{{qc_c}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Final_Description</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="f_d" value="{{f_d}}"> -->
+                <textarea name="f_d" id="" cols="80" >{{f_d}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">QC_status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="qc_s" value="{{qc_s}}"> -->
+                <textarea name="qc_s" id="" cols="80">{{qc_s}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Notes_on_article</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="n_art" value="{{n_art}}"> -->
+                <textarea name="n_art" id="" cols="80">{{n_art}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">{{col}}</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="n_art" value="{{n_art}}"> -->
+                <textarea name="new_col" id="" cols="80">{{new_col}}</textarea>
+            </div>
+
+
+
+
+<!-- 
+            <div class="col-8">
+                <label for="inputAddress" class="form-label">Regulatory_Body</label>
+                <input  class="form-control" name="url" value="{{url}}"   placeholder="{{url}}" hidden>
+                <p id="url"><a href="">{{url}}</a></p>
+                <button type="button" onclick="return openwin()"  id="btn" >Open Url</button>
+                <p value="{{url}}" style="cursor: pointer; font-size: 20px; " name="url" ><a href="#" >{{url}}</a></p>
+                 
+            </div> -->
+            
+
+
+<!--            
+            <div class="col-md-12">
+                <label for="inputCity" class="form-label">Article</label>
+                <textarea type="text" class="form-control" id="cp"
+                    name="art" value="{{article}}">{{article}}</textarea>
+            </div>
+             -->
+
+
+
+            <div class="col-12 text-center">
+                <button type="submit"     class="btn btn-outline-success btn-lg " style="width: 200px;margin-bottom: 5px;">Save</button>
+            </div>
+        
+        </form>
+        {%elif seg == 'pnf'%}
+        <form class="row g-3" method="post" action="">
+            {%csrf_token%}
+            <div class="col-md-12">
+                <label for="inputEmail4" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Sr No.</label>
+                <!-- <input type="text" class="form-control" id="inputEmail4" 
+                      name="sr_no" value="{{sr_no}}"> -->
+                      <textarea name="sr_no" id="" cols="80">{{sr_no}}</textarea>
+            </div>
+            <div class="col-md-12">
+                <label for="inputPassword4" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Unique_REC_ID.</label>
+                <!-- <input type="text" class="form-control" id="inputPassword4" 
+                     name="sheet_no" value="{{sheet}}"> -->
+                     <textarea name="u_r_i" id="" cols="80">{{unique_rec_id}}</textarea>
+                     
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputPassword4" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Rec_No.</label>
+                <!-- <input type="text" class="form-control" id="inputPassword4" 
+                     name="sheet_no" value="{{sheet}}"> -->
+                     <textarea name="r_n" id="" cols="80">{{rec_no}}</textarea>
+                     
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputPassword4" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Sheet No.</label>
+                <!-- <input type="text" class="form-control" id="inputPassword4" 
+                     name="sheet_no" value="{{sheet}}"> -->
+                     <textarea name="sheet_no" id="" cols="80">{{sheet}}</textarea>
+                     
+            </div>
+            <!-- <div class="col-12">
+                <label for="inputAddress" class="form-label">URL</label>
+                <input type="text" class="form-control" id="inputAddress" name="url" value="{{url}}">
+                <textarea name="url" id="" cols="80">{{url}}</textarea>
+            </div> -->
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">URL</label>
+                <input  class="form-control" name="url" value="{{url}}"   placeholder="{{url}}" hidden>
+                <p id="url"><a href="https://www.google.com/search?q={{url}}" target="_blank">{{url}}</a></p>
+                <!-- <button type="button" onclick="return openwin()"  id="btn" >Open Url</button>
+                <p value="{{url}}" style="cursor: pointer; font-size: 20px; " name="url" ><a href="#" >{{url}}</a></p> -->
+                 
+            </div>
+            
+           
+            
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Regulatory_Body</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="r_body" value="{{r_body}}"> -->
+                <textarea name="r_body" id="" cols="80">{{regulatory}}</textarea>
+            </div>
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Published_Date</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="p_date" value="{{p_date}}"> -->
+                <textarea name="p_date" id="" cols="80">{{p_date}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Title</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="title" value="{{title}}"> -->
+                <textarea name="title" id="" cols="80">{{title}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Article</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="title" value="{{title}}"> -->
+                <textarea name="article" id="" cols="80">{{article}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Type</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="title" value="{{title}}"> -->
+                <textarea name="type" id="" cols="80">{{type}}</textarea>
+            </div>
+
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Researcher</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="res" value="{{res}}"> -->
+                <textarea name="res" id="" cols="80">{{res}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Working Date</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="date" value="{{date}}"> -->
+                <textarea name="date" id="" cols="80">{{date}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="w_s" value="{{w_s}}"> -->
+                <textarea name="status" id="" cols="80">{{status}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Case_Status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="d_s" value="{{d_s}}"> -->
+                <textarea name="case_status" id="" cols="80">{{case_status}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Order_Type</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="r_s" value="{{r_s}}"> -->
+                <textarea name="order" id="" cols="80">{{order}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Imposed_Value</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="country" value="{{country}}"> -->
+                <textarea name="i_v" id="" cols="80">{{i_v}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Settled_Value</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="sector" value="{{sector}}"> -->
+                <textarea name="s_v" id="" cols="80">{{s_v}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Currency</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="impact" value="{{impact}}"> -->
+                <textarea name="curr" id="" cols="80">{{curr}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Cause_of_Penalty</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="w_a" value="{{w_a}}"> -->
+                <textarea name="c_o_f" id="" cols="80">{{c_o_p}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Registered_Unregistered_activity</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="time" value="{{timeline}}"> -->
+                <textarea name="act" id="" cols="80">{{act}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Entity_Status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="c_d" value="{{c_d}}"> -->
+                <textarea name="e_s" id="" cols="80">{{e_s}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Company_Name</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="e_i" value="{{e_a}}"> -->
+                <textarea name="c_name" id="" cols="80">{{c_name}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Individual_Name</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="act" value="{{act}}"> -->
+                <textarea name="i_name" id="" cols="80">{{i_name}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Industry</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="section" value="{{section}}"> -->
+                <textarea name="ind"  id="" cols="80">{{ind}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Third_parties</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="s_r" value="{{s_r}}"> -->
+                <textarea name="t_p" id="" cols="80">{{t_p}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Summary_Remarks</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="s_r" value="{{s_r}}"> -->
+                <textarea name="s_r" id="" cols="80">{{s_r}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Description_Automated</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="d_a" value="{{d_a}}"> -->
+                <textarea name="d_a" id="" cols="80">{{d_a}}</textarea>
+            </div>
+
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Researcher_Doubt</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="r_d" value="{{r_d}}"> -->
+                <textarea name="r_d" id="" cols="80">{{r_d}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">QC_Comments</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="qc_c" value="{{qc_c}}"> -->
+                <textarea name="qc_c" id="" cols="80">{{qc_c}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Final_Description</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="f_d" value="{{f_d}}"> -->
+                <textarea name="f_d" id="" cols="80" >{{f_d}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">QC_status</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="qc_s" value="{{qc_s}}"> -->
+                <textarea name="qc_s" id="" cols="80">{{qc_s}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label" style="color: rgb(178, 87, 13);font-weight: 600;">Notes_on_Article_History</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="n_art" value="{{n_art}}"> -->
+                <textarea name="n_art" id="" cols="80">{{n_art}}</textarea>
+            </div>
+
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">{{col}}</label>
+                <!-- <input type="text" class="form-control" id="inputAddress" name="n_art" value="{{n_art}}"> -->
+                <textarea name="new_col" id="" cols="80">{{new_col}}</textarea>
+            </div>
+
+
+
+
+
+
+            
+
+
+
+
+            <div class="col-12 text-center">
+                <button type="submit"     class="btn btn-outline-success btn-lg " style="width: 200px;margin-bottom: 5px;">Save</button>
+            </div>
+        
+        </form>
+        {%endif%}
+    </div>
+</div>
+
+<script>
+
+// ab = document.getElementById('url').textContent
+
+// // a=url.value
+// console.log(ab);
+//     function openwin() {
+
+//         ab = document.getElementById('url').textContent
+       
+//         onclick=window.open(`https://www.google.com/search?q=${ab}`,screenLeft, "width=600,height=1000,left=700,top=50")
+//         btn=document.getElementById('btn')
+
+//         dv=document.getElementById('div1')
+
+      
+
+//     }
+
+</script>
+   
+</body>
+
+</html>
